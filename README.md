@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @stavthal
 - 👀 I’m interested in web development.
-- 🌱 I’m currently learning React and Vue!
+- 🌱 I’m currently expanding my knowledge in React and React Native!
 - 💞️ I’m looking to collaborate on web development projects.
 - 📫 Email me at: stavros8003@gmail.com
 
