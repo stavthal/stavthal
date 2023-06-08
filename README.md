@@ -1,4 +1,5 @@
 - 👋 Hi, I’m @stavthal
+- 💼 I am currently working as a Frontend Developer
 - 👀 I’m interested in web development.
 - 🌱 I’m currently expanding my knowledge in React and React Native!
 - 💞️ I’m looking to collaborate on web development projects.
