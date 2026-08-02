@@ -1,97 +1,72 @@
-<h1 align="center">Hi, I'm Stavros Thalassinos</h1>
+<div align="center">
 
-<p align="center">
-  <a href="https://git.io/typing-svg">
-    <img
-      src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=700&lines=Senior+Software+Engineer;Java+%26+Spring+Boot;React+%26+Next.js;Fintech%2C+SaaS+and+AI-enabled+systems"
-      alt="Typing SVG"
-    />
-  </a>
-</p>
+# STAVROS THALASSINOS
 
-<p align="center">
-  Senior Software Engineer building production systems for fintech and SaaS teams.
-</p>
+### Senior Software Engineer · Product Builder
 
-<p align="center">
-  <a href="https://sthlabs.net">STH Labs</a>
-  ·
-  <a href="https://stavros-thalassinos.netlify.app">Portfolio</a>
-  ·
-  <a href="https://www.linkedin.com/in/stavros-thalassinos/">LinkedIn</a>
-</p>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=2800&pause=900&color=22D3EE&center=true&vCenter=true&width=760&lines=Building+reliable+fintech+%26+SaaS+products;Java+%2F+Spring+Boot+%2F+Laravel+%2F+React;From+production+APIs+to+AI-enabled+workflows" alt="Typing introduction" />
+
+<br />
+
+[![STH Labs](https://img.shields.io/badge/STH_LABS-0F172A?style=for-the-badge&logo=vercel&logoColor=22D3EE)](https://sthlabs.net)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stavros-thalassinos/)
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-7C3AED?style=for-the-badge&logo=safari&logoColor=white)](https://stavros-thalassinos.netlify.app/)
+
+</div>
 
 ---
 
-## About me
+```text
+┌─────────────────────────────────────────────────────────────────────┐
+│  STAVROS THALASSINOS                                                 │
+│  Senior Software Engineer · Athens, Greece · Remote EU               │
+├─────────────────────────────────────────────────────────────────────┤
+│  Focus: fintech, SaaS, resilient backend systems, and AI products   │
+│  Status: available for selected product and engineering work         │
+└─────────────────────────────────────────────────────────────────────┘
+```
 
-- Senior Software Engineer working across backend and full-stack systems
-- Focused on Java, Spring Boot, React and Next.js
-- Experience with fintech, SaaS platforms and production integrations
-- Building AI-enabled products and internal tools
-- Available for selected remote contract work
+## `> whoami`
 
-## Core stack
+I build and modernize production software for fintech and SaaS teams. My work spans backend systems, APIs, full-stack product delivery, cloud infrastructure, observability, and practical AI-enabled workflows.
 
-### Backend
+## `> stack --core`
 
-![Java](https://img.shields.io/badge/Java-Backend-007396?style=for-the-badge&logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-Framework-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-Runtime-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-
-### Frontend
-
-![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-Framework-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-Language-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-
-### Infrastructure
-
-![Docker](https://img.shields.io/badge/Docker-Containers-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Google Cloud](https://img.shields.io/badge/Google_Cloud-Infrastructure-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-
-## Current work
-
-- Building and maintaining fintech systems
-- Developing SaaS and internal operational platforms
-- Exploring AI-assisted product workflows
-- Building products through [STH Labs](https://sthlabs.net)
-
-## GitHub activity
-
-<p align="center">
-  <img
-    height="170"
-    src="https://github-readme-stats.vercel.app/api?username=stavthal&show_icons=true&hide_border=true"
-    alt="GitHub statistics"
-  />
+<p>
+  <img src="https://img.shields.io/badge/Java-0F172A?style=flat-square&logo=openjdk&logoColor=F89820" alt="Java" />
+  <img src="https://img.shields.io/badge/Spring_Boot-0F172A?style=flat-square&logo=springboot&logoColor=6DB33F" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/Laravel-0F172A?style=flat-square&logo=laravel&logoColor=FF2D20" alt="Laravel" />
+  <img src="https://img.shields.io/badge/React-0F172A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Next.js-0F172A?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-0F172A?style=flat-square&logo=typescript&logoColor=3178C6" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/PostgreSQL-0F172A?style=flat-square&logo=postgresql&logoColor=4169E1" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Docker-0F172A?style=flat-square&logo=docker&logoColor=2496ED" alt="Docker" />
+  <img src="https://img.shields.io/badge/Google_Cloud-0F172A?style=flat-square&logo=googlecloud&logoColor=4285F4" alt="Google Cloud" />
+  <img src="https://img.shields.io/badge/AI-0F172A?style=flat-square&logo=openai&logoColor=74AA9C" alt="AI" />
 </p>
 
-<p align="center">
-  <img
-    src="https://github-readme-streak-stats.herokuapp.com/?user=stavthal&hide_border=true"
-    alt="GitHub contribution streak"
-  />
-</p>
+```yaml
+backend:      Java · Spring Boot · Laravel · REST APIs · PostgreSQL
+frontend:     TypeScript · React · Next.js
+platform:     Docker · Google Cloud · CI/CD · Observability
+product:      Fintech · SaaS · AI integrations · Developer workflows
+```
 
-<p align="center">
-  <img
-    src="https://github-readme-activity-graph.vercel.app/graph?username=stavthal&hide_border=true"
-    alt="GitHub activity graph"
-  />
-</p>
+## `> github --telemetry`
 
-## Contact
+<div align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=stavthal&show_icons=true&hide_title=true&count_private=true&theme=transparent&hide_border=true&title_color=22D3EE&icon_color=22D3EE&text_color=CBD5E1&ring_color=22D3EE" alt="Stavros's GitHub statistics" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=stavthal&layout=compact&theme=transparent&hide_border=true&title_color=22D3EE&text_color=CBD5E1" alt="Most used languages" />
+</div>
 
-For engineering contracts, product development and technical collaboration:
+<div align="center">
+  <img src="https://streak-stats.demolab.com?user=stavthal&theme=transparent&hide_border=true&ring=22D3EE&fire=F472B6&currStreakLabel=22D3EE&sideLabels=CBD5E1&dates=94A3B8&sideNums=E2E8F0&currStreakNum=E2E8F0" alt="GitHub contribution streak" />
+</div>
 
-- Website: [sthlabs.net](https://sthlabs.net)
-- LinkedIn: [Stavros Thalassinos](https://www.linkedin.com/in/stavros-thalassinos/)
-- Portfolio: [stavros-thalassinos.netlify.app](https://stavros-thalassinos.netlify.app)
+---
 
-<!---
-stavthal/stavthal is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+<div align="center">
+
+`$ build useful things. ship them well. keep learning.`
+
+</div>
