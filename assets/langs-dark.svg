@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="240" viewBox="0 0 460 240" role="img">
+  
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="55%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#131E36"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="55%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+    <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse">
+      <path d="M26 0H0V26" fill="none" stroke="#22D3EE" stroke-width="1" stroke-opacity="0.1"/>
+    </pattern>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    
+    <clipPath id="clipBar"><rect x="24" y="58" width="412" height="16" rx="8"/></clipPath>
+    <linearGradient id="shineBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#fff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clipPanel"><rect width="460" height="240" rx="18"/></clipPath>
+  </defs>
+  
+  <rect width="460" height="240" rx="18" fill="url(#bg)"/>
+  <g clip-path="url(#clipPanel)">
+    <g>
+      <rect x="-26" y="-26" width="512" height="292" fill="url(#grid)"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="0 0; 26 26; 0 0" dur="14s" repeatCount="indefinite"/>
+    </g>
+    <g filter="url(#soft)" opacity="0.3">
+      <circle cx="55.199999999999996" cy="48" r="81.60000000000001" fill="#22D3EE">
+        <animate attributeName="cy" values="48;148.8;48" dur="11s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="377.2" cy="180" r="72" fill="#7C3AED">
+        <animate attributeName="cx" values="377.2;285.2;377.2" dur="13s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="253.00000000000003" cy="24" r="52.8" fill="#F472B6" opacity="0.7">
+        <animate attributeName="r" values="52.8;76.8;52.8" dur="9s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="459" height="239" rx="18" fill="none" stroke="#1E293B"/>
+  <rect x="0.5" y="0.5" width="459" height="239" rx="18" fill="none" stroke="url(#accentGrad)" stroke-opacity="0.45"/>
+  
+  <g transform="translate(20,22)">
+    <circle cx="0"  cy="0" r="4.5" fill="#F472B6" opacity="0.85"/>
+    <circle cx="15" cy="0" r="4.5" fill="#22D3EE"  opacity="0.55"/>
+    <circle cx="30" cy="0" r="4.5" fill="#7C3AED" opacity="0.55"/>
+    <text x="46" y="4" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#475569" letter-spacing="1.4">lang --by-bytes</text>
+  </g>
+  <line x1="20" y1="40" x2="440" y2="40" stroke="#1E293B"/>
+  <rect x="24" y="58" width="412" height="16" rx="8" fill="#1E293B" fill-opacity="0.5"/>
+  <g clip-path="url(#clipBar)">
+    <rect x="24.0" y="58" width="176.1" height="16"
+      fill="#3178c6" opacity="0.95"/><rect x="200.1" y="58" width="73.9" height="16"
+      fill="#f1e05a" opacity="0.95"/><rect x="273.9" y="58" width="72.2" height="16"
+      fill="#F05138" opacity="0.95"/><rect x="346.1" y="58" width="24.1" height="16"
+      fill="#00ADD8" opacity="0.95"/><rect x="370.1" y="58" width="17.9" height="16"
+      fill="#3572A5" opacity="0.95"/><rect x="388.0" y="58" width="17.3" height="16"
+      fill="#41b883" opacity="0.95"/><rect x="405.4" y="58" width="15.7" height="16"
+      fill="#336790" opacity="0.95"/><rect x="421.1" y="58" width="14.9" height="16"
+      fill="#89e051" opacity="0.95"/>
+    <rect y="58" width="90" height="16" fill="url(#shineBar)">
+      <animate attributeName="x" values="-76;436;-76"
+        dur="5.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g>
+      <circle cx="29" cy="100" r="5" fill="#3178c6">
+        <animate attributeName="opacity" values="1;0.4;1" dur="3.6s"
+          begin="0.00s" repeatCount="indefinite"/>
+      </circle>
+      <text x="42" y="104" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#E2E8F0">TypeScript</text>
+      <text x="214" y="104" text-anchor="end" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5"
+        fill="#475569">42.7%</text>
+    </g><g>
+      <circle cx="243" cy="100" r="5" fill="#f1e05a">
+        <animate attributeName="opacity" values="1;0.4;1" dur="3.6s"
+          begin="0.25s" repeatCount="indefinite"/>
+      </circle>
+      <text x="256" y="104" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#E2E8F0">JavaScript</text>
+      <text x="428" y="104" text-anchor="end" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5"
+        fill="#475569">17.9%</text>
+    </g><g>
+      <circle cx="29" cy="127" r="5" fill="#F05138">
+        <animate attributeName="opacity" values="1;0.4;1" dur="3.6s"
+          begin="0.50s" repeatCount="indefinite"/>
+      </circle>
+      <text x="42" y="131" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#E2E8F0">Swift</text>
+      <text x="214" y="131" text-anchor="end" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5"
+        fill="#475569">17.5%</text>
+    </g><g>
+      <circle cx="243" cy="127" r="5" fill="#00ADD8">
+        <animate attributeName="opacity" values="1;0.4;1" dur="3.6s"
+          begin="0.75s" repeatCount="indefinite"/>
+      </circle>
+      <text x="256" y="131" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#E2E8F0">Go</text>
+      <text x="428" y="131" text-anchor="end" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5"
+        fill="#475569">5.8%</text>
+    </g><g>
+      <circle cx="29" cy="154" r="5" fill="#3572A5">
+        <animate attributeName="opacity" values="1;0.4;1" dur="3.6s"
+          begin="1.00s" repeatCount="indefinite"/>
+      </circle>
+      <text x="42" y="158" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#E2E8F0">Python</text>
+      <text x="214" y="158" text-anchor="end" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5"
+        fill="#475569">4.3%</text>
+    </g><g>
+      <circle cx="243" cy="154" r="5" fill="#41b883">
+        <animate attributeName="opacity" values="1;0.4;1" dur="3.6s"
+          begin="1.25s" repeatCount="indefinite"/>
+      </circle>
+      <text x="256" y="158" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#E2E8F0">Vue</text>
+      <text x="428" y="158" text-anchor="end" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5"
+        fill="#475569">4.2%</text>
+    </g><g>
+      <circle cx="29" cy="181" r="5" fill="#336790">
+        <animate attributeName="opacity" values="1;0.4;1" dur="3.6s"
+          begin="1.50s" repeatCount="indefinite"/>
+      </circle>
+      <text x="42" y="185" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#E2E8F0">PLpgSQL</text>
+      <text x="214" y="185" text-anchor="end" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5"
+        fill="#475569">3.8%</text>
+    </g><g>
+      <circle cx="243" cy="181" r="5" fill="#89e051">
+        <animate attributeName="opacity" values="1;0.4;1" dur="3.6s"
+          begin="1.75s" repeatCount="indefinite"/>
+      </circle>
+      <text x="256" y="185" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#E2E8F0">Shell</text>
+      <text x="428" y="185" text-anchor="end" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5"
+        fill="#475569">3.6%</text>
+    </g>
+  <text x="24" y="220" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5" fill="#475569">
+    <tspan fill="#7C3AED">&#9679;</tspan> 29 languages across 62 repositories
+  </text></svg>

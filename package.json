@@ -1,0 +1,11 @@
+{
+  "name": "stavthal-profile",
+  "private": true,
+  "type": "module",
+  "description": "Self-rendering GitHub profile: every card in assets/ is generated SVG, no third-party image services.",
+  "scripts": {
+    "render": "node scripts/render.mjs",
+    "preview": "node scripts/render.mjs && python3 -m http.server 8791"
+  },
+  "engines": { "node": ">=20" }
+}
