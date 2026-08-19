@@ -50,18 +50,24 @@ export function hero(t, d) {
     </filter>
     ${clipPanel(W, H, 22)}`;
 
+  // The pill is sized from the label, and textLength pins the label to exactly that width —
+  // so a machine that falls back to a wider monospace font still cannot overflow the box.
   const chipLabel = '~/athens · remote EU';
+  const chipTrack = 0.6, chipTextX = 24;
+  const chipTextW = textW(chipLabel, 11.5, chipTrack);
+  const chipW = chipTextX + chipTextW + 14;
   const body = `
   ${defs(t, extra)}
   ${panel(t, W, H, 22)}
 
   <g transform="translate(44,58)">
-    <rect x="-1" y="-15" width="${(textW(chipLabel, 11.5) + 30).toFixed(0)}" height="22" rx="11"
+    <rect x="-1" y="-15" width="${chipW.toFixed(1)}" height="22" rx="11"
       fill="${t.chip}" fill-opacity="${t.id === 'dark' ? 0.7 : 0.9}" stroke="${t.stroke}"/>
     <circle cx="12" cy="-4" r="3.2" fill="${t.accent}">
       <animate attributeName="opacity" values="1;0.25;1" dur="2.2s" repeatCount="indefinite"/>
     </circle>
-    <text x="24" y="0" font-family="${MONO}" font-size="11.5" fill="${t.dim}" letter-spacing="0.6">${esc(chipLabel)}</text>
+    <text x="${chipTextX}" y="0" font-family="${MONO}" font-size="11.5" fill="${t.dim}"
+      letter-spacing="${chipTrack}" textLength="${chipTextW.toFixed(1)}" lengthAdjust="spacing">${esc(chipLabel)}</text>
   </g>
 
   <text x="44" y="${nameY}" font-family="${MONO}" font-size="${nameSize}" font-weight="700"

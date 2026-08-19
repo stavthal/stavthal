@@ -27,7 +27,8 @@ export const esc = (s) => String(s)
   .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
 // Monospace advance width is a fixed ratio, so text boxes can be sized without a layout engine.
-export const textW = (s, size) => s.length * size * 0.6;
+// Tracking is part of that advance: omitting it sizes every box short by tracking x length.
+export const textW = (s, size, tracking = 0) => s.length * (size * 0.6 + tracking);
 
 export const defs = (t, extra = '') => `
   <defs>
