@@ -429,7 +429,7 @@
       fill="#E2E8F0" opacity="0.8"/><rect x="826.8" y="75.4" width="12" height="12" rx="3"
       fill="#E2E8F0" opacity="0.8"/><rect x="826.8" y="90.8" width="12" height="12" rx="3"
       fill="#E2E8F0" opacity="0.8"/><rect x="826.8" y="106.2" width="12" height="12" rx="3"
-      fill="#E2E8F0" opacity="0.8"/><rect x="826.8" y="121.6" width="12" height="12" rx="3"
+      fill="#C7BAF0"/><rect x="826.8" y="121.6" width="12" height="12" rx="3"
       fill="#E2E8F0" opacity="0.8"/><rect x="826.8" y="137.0" width="12" height="12" rx="3"
       fill="#E2E8F0" opacity="0.8"/><rect x="826.8" y="152.4" width="12" height="12" rx="3"
       fill="#E2E8F0" opacity="0.8"/>
@@ -443,7 +443,7 @@
   <g font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5">
     
     <text x="26" y="189.8" fill="#94A3B8">
-      total <tspan fill="#0F172A" font-size="12" font-weight="700">76</tspan>
+      total <tspan fill="#0F172A" font-size="12" font-weight="700">77</tspan>
     </text>
     <text x="178" y="189.8" fill="#94A3B8">
       best day <tspan fill="#0F172A" font-size="12" font-weight="700">19</tspan>

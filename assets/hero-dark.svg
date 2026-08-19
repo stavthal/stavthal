@@ -106,9 +106,9 @@
 
   <text x="44" y="232" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#475569">
     <tspan fill="#22D3EE">$</tspan> uptime &#8212; <tspan fill="#94A3B8">8y shipping</tspan>
-    &#183; <tspan fill="#94A3B8">62 repos</tspan>
-    &#183; <tspan fill="#94A3B8">70 commits / 12mo</tspan>
-    &#183; <tspan fill="#94A3B8">29 languages</tspan>
+    &#183; <tspan fill="#94A3B8">27 repos</tspan>
+    &#183; <tspan fill="#94A3B8">71 commits / 12mo</tspan>
+    &#183; <tspan fill="#94A3B8">23 languages</tspan>
   </text>
 
   <g><rect x="44.0" y="245" width="3.4" height="5" rx="1.7"
