@@ -7,6 +7,7 @@ import { hero } from './cards/hero.mjs';
 import { stats } from './cards/stats.mjs';
 import { langs } from './cards/langs.mjs';
 import { pulse } from './cards/pulse.mjs';
+import { stack3d } from './cards/stack3d.mjs';
 
 const USER = process.env.GH_USER || 'stavthal';
 const TOKEN = process.env.GITHUB_TOKEN;
@@ -74,7 +75,7 @@ function shape(u, weeks) {
   };
 }
 
-const CARDS = { hero, stats, langs, pulse };
+const CARDS = { hero, stats, langs, pulse, stack3d };
 
 // The weekly histogram costs ~2 minutes of paced search calls, so local iteration on the
 // card designs can reuse the last result via RENDER_CACHE=1. CI always fetches fresh.

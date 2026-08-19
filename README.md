@@ -46,20 +46,15 @@ The rest of the time I ship products solo, from first commit to signed release.
 
 ## `> stack --core`
 
-<p>
-  <img src="https://img.shields.io/badge/Java-0F172A?style=flat-square&logo=openjdk&logoColor=F89820" alt="Java" />
-  <img src="https://img.shields.io/badge/Spring_Boot-0F172A?style=flat-square&logo=springboot&logoColor=6DB33F" alt="Spring Boot" />
-  <img src="https://img.shields.io/badge/Laravel-0F172A?style=flat-square&logo=laravel&logoColor=FF2D20" alt="Laravel" />
-  <img src="https://img.shields.io/badge/TypeScript-0F172A?style=flat-square&logo=typescript&logoColor=3178C6" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/React-0F172A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Next.js-0F172A?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/Vue-0F172A?style=flat-square&logo=vuedotjs&logoColor=4FC08D" alt="Vue" />
-  <img src="https://img.shields.io/badge/Go-0F172A?style=flat-square&logo=go&logoColor=00ADD8" alt="Go" />
-  <img src="https://img.shields.io/badge/Swift-0F172A?style=flat-square&logo=swift&logoColor=F05138" alt="Swift" />
-  <img src="https://img.shields.io/badge/PostgreSQL-0F172A?style=flat-square&logo=postgresql&logoColor=4169E1" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Docker-0F172A?style=flat-square&logo=docker&logoColor=2496ED" alt="Docker" />
-  <img src="https://img.shields.io/badge/Google_Cloud-0F172A?style=flat-square&logo=googlecloud&logoColor=4285F4" alt="Google Cloud" />
-</p>
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stack3d-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/stack3d-light.svg" />
+  <img src="assets/stack3d-dark.svg" alt="Isometric render of the technologies I work in" width="100%" />
+</picture>
+
+</div>
 
 ```yaml
 backend:      Java · Spring Boot · Laravel · Go · REST APIs · MySQL · PostgreSQL
