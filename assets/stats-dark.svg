@@ -61,7 +61,7 @@
         <animate attributeName="opacity" values="1;0.35;1" dur="3.2s" begin="0.00s" repeatCount="indefinite"/>
       </rect>
       <text x="42" y="95" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="27" font-weight="700"
-        fill="#E2E8F0">71</text>
+        fill="#E2E8F0">7,626</text>
       <text x="42" y="113" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5"
         fill="#475569" letter-spacing="1.2">COMMITS / 12MO</text>
       <rect x="172" y="82" width="34" height="4" rx="2" fill="#22D3EE" opacity="0.22"/>

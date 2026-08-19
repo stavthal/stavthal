@@ -87,7 +87,7 @@ product:      Fintech · SaaS · AI integrations · Developer workflows
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/pulse-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/pulse-light.svg" />
-  <img src="assets/pulse-dark.svg" alt="Daily contribution heatmap for the last year" width="100%" />
+  <img src="assets/pulse-dark.svg" alt="Weekly commit volume across all repositories, private included" width="100%" />
 </picture>
 
 </div>
@@ -103,31 +103,15 @@ product:      Fintech · SaaS · AI integrations · Developer workflows
 | [**check4me-web**](https://github.com/stavthal/check4me-web) | Nuxt client for Check4Me | `Nuxt` |
 | [**local-meeting-notes**](https://github.com/stavthal/local-meeting-notes) | Fully local meeting transcription and summarisation | `Python` |
 
-## `> cat .github/how-this-readme-works`
+## `> cat .github/`
 
-Everything above the fold is **generated, not embedded**. No third-party stats services, no rate limits,
-no card that quietly 404s when someone else's free tier runs out.
-
-```text
-scripts/theme.mjs      two palettes + shared SVG primitives (panel, grid, orbs, window chrome)
-scripts/cards/*.mjs    one module per card — hero, stats, langs, pulse
-scripts/render.mjs     GitHub GraphQL → shaped data → 4 cards × 2 themes → assets/*.svg
-.github/workflows/     re-renders daily and commits only when the numbers actually moved
-```
-
-Three things make it work:
-
-- **Both themes are rendered, not faked.** Each card is emitted twice and the README picks one
-  with `<picture media="(prefers-color-scheme: …)">`, so it follows *your* GitHub theme.
-- **Every static frame is already complete.** GitHub serves README images through `<img>`, where a
-  one-shot `fill="freeze"` SMIL animation never paints its final state. So the SVG attributes always
-  hold the finished visual, and animation is layered on top as a looping extra — it can only ever add.
-- **The data is real.** Commit counts, language bytes, streaks and the heatmap all come from the
-  GitHub GraphQL API at render time, private contributions included.
+The cards above are generated, not embedded — no third-party stats service, nothing to 404
+when someone else's free tier runs out. `scripts/render.mjs` pulls live GitHub data, writes
+eight SVGs into `assets/`, and a daily Action commits them only when the numbers move.
 
 ```bash
-npm run render     # regenerate assets/ from live GitHub data (needs GITHUB_TOKEN)
-npm run preview    # render, then serve scripts/preview.html to eyeball both themes
+npm run render     # regenerate assets/ (needs GITHUB_TOKEN)
+npm run preview    # render, then eyeball both themes locally
 ```
 
 ---

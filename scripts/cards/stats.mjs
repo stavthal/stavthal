@@ -28,7 +28,7 @@ export function stats(t, d) {
         <animate attributeName="opacity" values="1;0.35;1" dur="3.2s" begin="${begin}s" repeatCount="indefinite"/>
       </rect>
       <text x="${x + 18}" y="${y + 33}" font-family="${MONO}" font-size="27" font-weight="700"
-        fill="${t.text}">${tile.v}</text>
+        fill="${t.text}">${tile.v.toLocaleString('en-US')}</text>
       <text x="${x + 18}" y="${y + 51}" font-family="${MONO}" font-size="10.5"
         fill="${t.faint}" letter-spacing="1.2">${esc(tile.k.toUpperCase())}</text>
       <rect x="${x + 148}" y="${y + 20}" width="34" height="4" rx="2" fill="${tile.c}" opacity="0.22"/>

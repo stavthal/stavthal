@@ -95,7 +95,7 @@ export function hero(t, d) {
   <text x="44" y="${nameY + 106}" font-family="${MONO}" font-size="12" fill="${t.faint}">
     <tspan fill="${t.accent}">$</tspan> uptime &#8212; <tspan fill="${t.dim}">${d.years}y shipping</tspan>
     &#183; <tspan fill="${t.dim}">${d.repoCount} repos</tspan>
-    &#183; <tspan fill="${t.dim}">${d.commitsYear} commits / 12mo</tspan>
+    &#183; <tspan fill="${t.dim}">${d.commitsYear.toLocaleString('en-US')} commits / 12mo</tspan>
     &#183; <tspan fill="${t.dim}">${d.langCount} languages</tspan>
   </text>
 

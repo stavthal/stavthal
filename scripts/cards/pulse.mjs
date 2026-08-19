@@ -2,41 +2,45 @@ import { MONO, defs, panel, clipPanel, chrome, svg, esc } from '../theme.mjs';
 
 const W = 900, H = 236;
 
-// Day-level contribution heatmap. Cells are static (the first frame must be complete —
-// see the <img> note in stats.mjs); a diagonal shimmer sweeps across for motion.
+// Weekly commit volume across every repo the token can read, private ones included.
+// Bars are static so the data is honest in the un-animated first frame (see stats.mjs);
+// a scan line and a pulsing peak supply the motion.
 export function pulse(t, d) {
-  const cell = 12, gap = 3.4, step = cell + gap;
-  const gridX = 26, gridY = 60;
   const weeks = d.weeks;
+  const padX = 26, top = 62, base = H - 58;
+  const slot = (W - padX * 2) / weeks.length;
+  const bw = Math.max(4, slot * 0.66);
+  const peak = Math.max(1, d.peakWeek);
+  const maxH = base - top;
 
-  // Five-level ramp from the panel's own accents, so it matches the rest of the card set.
-  const ramp = t.id === 'dark'
-    ? ['#1E293B', '#3B2E7A', '#5B37B8', '#2C8FB8', '#22D3EE']
-    : ['#E2E8F0', '#C7BAF0', '#A78BE8', '#5FB6D4', '#0891B2'];
-  const peakDay = Math.max(1, d.peakDay);
-  const level = (n) => (n === 0 ? 0 : Math.min(4, 1 + Math.floor((n / peakDay) * 3.999)));
+  const bars = weeks.map((w, i) => {
+    const h = Math.max(2, (w.total / peak) * maxH);
+    const x = padX + i * slot + (slot - bw) / 2;
+    const isPeak = w.total === peak;
+    return `<rect x="${x.toFixed(1)}" y="${(base - h).toFixed(1)}" width="${bw.toFixed(1)}"
+      height="${h.toFixed(1)}" rx="${Math.min(3, bw / 2).toFixed(1)}" fill="url(#barGrad)"
+      opacity="${(0.5 + (w.total / peak) * 0.5).toFixed(2)}">${isPeak
+        ? `<animate attributeName="opacity" values="1;0.5;1" dur="2.4s" repeatCount="indefinite"/>` : ''}</rect>`;
+  }).join('');
 
-  const cells = weeks.map((w, wi) => w.days.map((n, di) => {
-    const x = gridX + wi * step, y = gridY + di * step;
-    return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${cell}" height="${cell}" rx="3"
-      fill="${ramp[level(n)]}"${n === 0 ? ` opacity="${t.id === 'dark' ? 0.55 : 0.8}"` : ''}/>`;
-  }).join('')).join('');
-
-  const gridW = weeks.length * step, gridH = 7 * step;
-  const legendX = W - 26 - 128, legendY = gridY + gridH + 22;
+  // Mean line, so the shape of the year reads at a glance rather than needing the numbers.
+  const avgY = base - (d.avgWeek / peak) * maxH;
 
   const facts = [
-    ['total', d.calTotal],
-    ['best day', d.peakDay],
-    ['longest streak', `${d.longestStreak}d`],
-    ['current streak', `${d.currentStreak}d`],
+    ['commits', d.commitsYear.toLocaleString('en-US')],
+    ['peak week', d.peakWeek.toLocaleString('en-US')],
+    ['weekly avg', d.avgWeek.toLocaleString('en-US')],
+    ['active weeks', `${d.activeWeeks}/${weeks.length}`],
   ];
 
   const extra = `
-    <clipPath id="clipGrid"><rect x="${gridX}" y="${gridY}" width="${gridW}" height="${gridH}"/></clipPath>
+    <linearGradient id="barGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="${t.accent2}"/>
+      <stop offset="100%" stop-color="${t.accent}"/>
+    </linearGradient>
     <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="${t.accent}" stop-opacity="0"/>
-      <stop offset="50%" stop-color="${t.accent}" stop-opacity="${t.id === 'dark' ? 0.30 : 0.22}"/>
+      <stop offset="50%" stop-color="${t.accent}" stop-opacity="${t.id === 'dark' ? 0.32 : 0.22}"/>
       <stop offset="100%" stop-color="${t.accent}" stop-opacity="0"/>
     </linearGradient>
     ${clipPanel(W, H)}`;
@@ -44,28 +48,29 @@ export function pulse(t, d) {
   const body = `
   ${defs(t, extra)}
   ${panel(t, W, H)}
-  ${chrome(t, `contributions --daily --last-${weeks.length}w`, W)}
-  <g clip-path="url(#clipGrid)">
-    ${cells}
-    <g transform="skewX(-18)">
-      <rect x="-120" y="${gridY}" width="90" height="${gridH}" fill="url(#scan)">
-        <animate attributeName="x" values="-120;${gridX + gridW + 120};-120" dur="6.5s" repeatCount="indefinite"/>
-      </rect>
-    </g>
+  ${chrome(t, `commits --weekly --all-repos --last-${weeks.length}w`, W)}
+
+  <line x1="${padX}" y1="${avgY.toFixed(1)}" x2="${W - padX}" y2="${avgY.toFixed(1)}"
+    stroke="${t.accent3}" stroke-opacity="0.55" stroke-dasharray="3 4"/>
+  <text x="${padX + 3}" y="${(avgY - 6).toFixed(1)}" font-family="${MONO}"
+    font-size="9.5" fill="${t.accent3}" opacity="0.85">avg ${d.avgWeek}</text>
+
+  ${bars}
+  <line x1="${padX}" y1="${base + 0.5}" x2="${W - padX}" y2="${base + 0.5}" stroke="${t.stroke}"/>
+  <g clip-path="url(#clipPanel)">
+    <rect y="${top - 6}" width="80" height="${base - top + 12}" fill="url(#scan)">
+      <animate attributeName="x" values="-90;${W};-90" dur="7s" repeatCount="indefinite"/>
+    </rect>
   </g>
 
   <g font-family="${MONO}" font-size="10.5">
     ${facts.map(([k, v], i) => `
-    <text x="${26 + i * 152}" y="${legendY}" fill="${t.faint}">
-      ${esc(k)} <tspan fill="${t.text}" font-size="12" font-weight="700">${esc(String(v))}</tspan>
+    <text x="${padX + i * 168}" y="${H - 30}" fill="${t.faint}">
+      ${esc(k)} <tspan fill="${t.text}" font-size="13" font-weight="700">${esc(v)}</tspan>
     </text>`).join('')}
-    <text x="${legendX - 8}" y="${legendY}" text-anchor="end" fill="${t.faint}">less</text>
-    ${ramp.map((c, i) => `<rect x="${legendX + i * 16}" y="${legendY - 9}" width="12" height="12" rx="3" fill="${c}"/>`).join('')}
-    <text x="${legendX + ramp.length * 16 + 4}" y="${legendY}" fill="${t.faint}">more</text>
   </g>
-
-  <text x="26" y="${H - 14}" font-family="${MONO}" font-size="10" fill="${t.faint}">
-    ${esc(d.calStart)} &#8594; ${esc(d.calEnd)} &#183; includes private contributions
+  <text x="${padX}" y="${H - 12}" font-family="${MONO}" font-size="10" fill="${t.faint}">
+    ${esc(d.calStart)} &#8594; ${esc(d.calEnd)} &#183; every repo this token can read, private included
   </text>`;
   return svg(W, H, body);
 }
