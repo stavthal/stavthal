@@ -1,6 +1,6 @@
 // Fetches live GitHub data, renders every card in both themes into assets/.
 // No dependencies, no third-party image services: Node 20 fetch + the GitHub GraphQL API.
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
 import { THEMES } from './theme.mjs';
 import { hero } from './cards/hero.mjs';
 import { stats } from './cards/stats.mjs';
@@ -13,6 +13,7 @@ const OUT = new URL('../assets/', import.meta.url);
 
 const QUERY = `
 query($login: String!) {
+  viewer { login }
   user(login: $login) {
     createdAt
     repositories(first: 100, ownerAffiliations: OWNER, isFork: false, orderBy: {field: PUSHED_AT, direction: DESC}) {
@@ -45,7 +46,7 @@ async function fetchData() {
   if (!res.ok) throw new Error(`GitHub API ${res.status}: ${await res.text()}`);
   const json = await res.json();
   if (json.errors) throw new Error(JSON.stringify(json.errors));
-  return json.data.user;
+  return json.data;
 }
 
 function shape(u) {
@@ -99,19 +100,28 @@ function shape(u) {
 
 const CARDS = { hero, stats, langs, pulse };
 
-const user = await fetchData();
+const { viewer, user } = await fetchData();
+
+// A token that is not the profile owner still answers, but only ever sees public repos —
+// so it renders a quietly smaller, wrong profile. That is the failure worth refusing.
+if (viewer.login.toLowerCase() !== USER.toLowerCase()) {
+  throw new Error(`token belongs to "${viewer.login}", not "${USER}" — it can only see public `
+    + 'repositories. Set a METRICS_TOKEN secret (classic PAT, repo + read:user scopes).');
+}
+
 const data = shape(user);
 
-// A token without access to private repos still returns a valid-but-empty response.
-// Refuse to overwrite good cards with a hollow one — CI needs a PAT, not GITHUB_TOKEN.
-const thin = [
-  data.repoCount === 0 && 'no repositories',
-  data.languages.length === 0 && 'no language bytes',
-  data.calTotal === 0 && 'no contributions',
-].filter(Boolean);
-if (thin.length) {
-  throw new Error(`refusing to render from thin data (${thin.join(', ')}) — `
-    + 'the token likely lacks repo/read:user scope for private contributions.');
+// Second net: even an owner token can be scoped too narrowly. Compare against the numbers
+// last committed and refuse a material regression rather than overwrite good cards.
+const prevPath = new URL('data.json', OUT);
+if (existsSync(prevPath)) {
+  const prev = JSON.parse(readFileSync(prevPath, 'utf8'));
+  const shrunk = ['repoCount', 'langCount', 'calTotal']
+    .filter((k) => data[k] < prev[k] * 0.9)
+    .map((k) => `${k} ${prev[k]} -> ${data[k]}`);
+  if (shrunk.length) {
+    throw new Error(`refusing to render from thinner data than last time (${shrunk.join(', ')}).`);
+  }
 }
 mkdirSync(OUT, { recursive: true });
 
@@ -121,6 +131,11 @@ for (const [name, render] of Object.entries(CARDS)) {
     writeFileSync(file, render(theme, data));
   }
 }
+const summary = {
+  repoCount: data.repoCount, langCount: data.langCount,
+  calTotal: data.calTotal, commitsYear: data.commitsYear, stamp: data.stamp,
+};
+writeFileSync(new URL('data.json', OUT), JSON.stringify(summary, null, 2) + '\n');
 console.log(`rendered ${Object.keys(CARDS).length * 2} cards`, {
   commits: data.commitsYear, repos: data.repoCount, langs: data.langCount, weeks: data.weeks.length,
 });

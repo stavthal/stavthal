@@ -77,7 +77,7 @@
         <animate attributeName="opacity" values="1;0.35;1" dur="3.2s" begin="0.35s" repeatCount="indefinite"/>
       </rect>
       <text x="256" y="95" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="27" font-weight="700"
-        fill="#0F172A">27</text>
+        fill="#0F172A">62</text>
       <text x="256" y="113" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5"
         fill="#94A3B8" letter-spacing="1.2">REPOSITORIES</text>
       <rect x="386" y="82" width="34" height="4" rx="2" fill="#6D28D9" opacity="0.22"/>
@@ -93,7 +93,7 @@
         <animate attributeName="opacity" values="1;0.35;1" dur="3.2s" begin="0.70s" repeatCount="indefinite"/>
       </rect>
       <text x="42" y="171" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="27" font-weight="700"
-        fill="#0F172A">23</text>
+        fill="#0F172A">29</text>
       <text x="42" y="189" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5"
         fill="#94A3B8" letter-spacing="1.2">LANGUAGES</text>
       <rect x="172" y="158" width="34" height="4" rx="2" fill="#DB2777" opacity="0.22"/>
@@ -109,7 +109,7 @@
         <animate attributeName="opacity" values="1;0.35;1" dur="3.2s" begin="1.05s" repeatCount="indefinite"/>
       </rect>
       <text x="256" y="171" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="27" font-weight="700"
-        fill="#0F172A">3</text>
+        fill="#0F172A">23</text>
       <text x="256" y="189" font-family="ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="10.5"
         fill="#94A3B8" letter-spacing="1.2">ACTIVE REPOS</text>
       <rect x="386" y="158" width="34" height="4" rx="2" fill="#0891B2" opacity="0.22"/>
