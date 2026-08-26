@@ -3,7 +3,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg" />
-  <img src="assets/hero-dark.svg" alt="Stavros Thalassinos — Senior Software Engineer, Athens, Greece" width="100%" />
+  <img src="assets/hero-dark.svg" alt="Stavros Thalassinos — Software Engineer, Athens, Greece" width="100%" />
 </picture>
 
 <br />
