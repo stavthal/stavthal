@@ -20,7 +20,7 @@
 
 ```text
 ┌───────────────────────────────────────────────────────────────────────────┐
-│  stavros thalassinos — senior software engineer · athens, gr · remote eu  │
+│  stavros thalassinos — software engineer · athens, gr · remote eu  │
 ├───────────────────────────────────────────────────────────────────────────┤
 │  day job   payment infrastructure at OKTO Payments                        │
 │  side      STH Labs — small, sharp products shipped end to end            │
